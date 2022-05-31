@@ -1,9 +1,18 @@
 .todo {
   width: 100%;
   max-width: 500px;
-  box-shadow: 1px 1px 16px 0 rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: 1px 1px 16px 0 rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 1px 1px 16px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 1px 1px 14px 0 rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 1px 1px 14px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 1px 1px 14px 0 rgba(0, 0, 0, 0.2);
+  transition: box-shadow linear 0.3s;
+}
+
+.todo:hover {
+  box-shadow: 1px 1px 24px 4px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 1px 1px 24px 4px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 1px 1px 24px 4px rgba(0, 0, 0, 0.2);
 }
 
 .todo .todo__header {
@@ -32,7 +41,7 @@
 }
 
 .todo .todo__input-icon {
-  color: #8a8a8a;
+  color: #e1e1e1;
   transform: rotate(90deg);
 }
 
@@ -55,7 +64,17 @@
 .todo .todo__clear-btn {
   width: 100%;
   padding: 20px 0;
-  color: #b2b2b3;
+  color: #ff7878;
   text-align: center;
   background-color: #f6f6f6;
+  transition: all ease-in-out 0.3s;
+}
+
+.todo .todo__clear-btn:hover {
+  color: #f00;
+  background-color: #ffc7c7;
+}
+
+.todo .todo__clear-icon {
+  margin-right: 12px;
 }

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dekko&display=swap');
+
 *,
 *::after,
 *::before {
@@ -8,7 +10,7 @@
 
 body {
   min-height: 100vh;
-  font-family: sans-serif;
+  font-family: "Dekko", cursive;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,40 +25,43 @@ button {
   background-color: transparent;
   font-size: 16px;
   cursor: pointer;
+  font-family: inherit;
 }
 
 input,
 label,
 select,
 button,
-textarea
-{
-	margin:0;
-	border:0;
-	padding:0;
-	display:inline-block;
-	vertical-align:middle;
-	white-space:normal;
-	background:none;
-	line-height:1;
+textarea {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: normal;
+  background: none;
+  line-height: 1;
+  font-family: inherit;
 }
 
-input:focus
-{
-	outline:0;
+input:focus {
+  outline: 0;
 }
 
 ::-webkit-input-placeholder {
+  font-family: inherit;
   font-style: italic;
   color: #8a8a8a;
 }
 
 :-ms-input-placeholder {
+  font-family: inherit;
   font-style: italic;
   color: #8a8a8a;
 }
 
 ::placeholder {
+  font-family: inherit;
   font-style: italic;
   color: #8a8a8a;
 }
