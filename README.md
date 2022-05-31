@@ -1,4 +1,4 @@
-`HTML` `CSS` `JS` `ES6` `WEBPACK` <br>
+`HTML` `CSS` `JS` `ES6` `WEBPACK` `LINTERS` <br>
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 # Todo List Project
