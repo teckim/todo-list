@@ -1,4 +1,4 @@
-`HTML` `CSS` `JS` `ES6` `WEBPACK` `LINTERS` <br>
+`HTML` `CSS` `JS` `ES6` `WEBPACK` `NPM` `LINTERS` <br>
 
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
@@ -9,6 +9,7 @@
 ## Built With
 
 - HTML/CSS/JS-ES6
+- NPM
 - Webpack
 - ES Modules
 - Linters
