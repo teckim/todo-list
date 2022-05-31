@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+
+    <script
+      src="https://kit.fontawesome.com/1a3881f3c5.js"
+      crossorigin="anonymous"
+    ></script>
+  <script defer src="main.js"></script></head>
+  <body>
+    <div class="todo">
+      <div class="todo__header">
+        <div class="todo__header-title">Today's To Do</div>
+        <button class="button" type="button">
+          <i class="fa-solid fa-rotate"></i>
+        </button>
+      </div>
+      <div class="todo__input-container">
+        <input
+          class="todo__input"
+          type="text"
+          placeholder="Add to your list..."
+        />
+        <i class="todo__input-icon fa-solid fa-turn-down"></i>
+      </div>
+      <ul class="todo__list"></ul>
+      <div class="todo__footer">
+        <button class="todo__clear-btn" type="button">
+          <i class="todo__clear-icon fa-solid fa-trash"></i>
+          <span>Clear All Completed</span>
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

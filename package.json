@@ -8,7 +8,7 @@
     "start": "webpack serve --open",
     "build": "webpack",
     "lint": "npx hint . && npx stylelint \"**/*.{css,scss}\" && npx eslint .",
-    "deploy:gh-pages": "webpack && git subtree push --prefix dist origin gh-pages"
+    "deploy:gh-pages": "git subtree push --prefix dist origin gh-pages"
   },
   "keywords": [],
   "author": "",
