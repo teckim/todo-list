@@ -1,0 +1,8 @@
+.button {
+  color: #8a8a8a;
+}
+
+.button:hover {
+  color: #000;
+  cursor: pointer;
+}
