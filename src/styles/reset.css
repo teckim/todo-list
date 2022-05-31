@@ -1,0 +1,62 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+input,
+label,
+select,
+button,
+textarea
+{
+	margin:0;
+	border:0;
+	padding:0;
+	display:inline-block;
+	vertical-align:middle;
+	white-space:normal;
+	background:none;
+	line-height:1;
+}
+
+input:focus
+{
+	outline:0;
+}
+
+::-webkit-input-placeholder {
+  font-style: italic;
+  color: #8a8a8a;
+}
+
+:-ms-input-placeholder {
+  font-style: italic;
+  color: #8a8a8a;
+}
+
+::placeholder {
+  font-style: italic;
+  color: #8a8a8a;
+}
