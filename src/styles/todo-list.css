@@ -50,15 +50,40 @@
   align-items: center;
   padding: 20px 12px;
   border-bottom: 1px solid #f0f0f1;
+  transition: background-color ease-in-out 0.3s;
 }
 
-.todo .todo__description {
+.todo .todo__list-item--focus {
+  background-color: #ffc7c78b;
+}
+
+.todo .todo__label {
+  flex-grow: 1;
   margin: 0 12px;
+}
+
+.todo .todo__list-item--completed .todo__label {
+  text-decoration: line-through;
+  text-decoration-color: #ff7878;
 }
 
 .todo .todo__drag-btn {
   margin-left: auto;
   cursor: move;
+}
+
+.todo .todo__list-item--focus .todo__drag-btn {
+  display: none;
+}
+
+.todo .todo__remove-btn {
+  display: none;
+  margin-left: auto;
+  color: #ff7878;
+}
+
+.todo .todo__list-item--focus .todo__remove-btn {
+  display: block;
 }
 
 .todo .todo__clear-btn {
