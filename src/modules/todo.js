@@ -84,9 +84,10 @@ export default class ToDoList {
 
     removeBtnEls.forEach((element) => {
       element.addEventListener('click', (event) => {
-        event.stopPropagation();
         const index = parseInt(event.currentTarget.dataset.index, 10);
+
         this.delete(index);
+        this.sort();
       });
     });
 
@@ -103,12 +104,12 @@ export default class ToDoList {
 
     this.clearButtonEl.addEventListener('click', () => {
       const checkboxEls = document.querySelectorAll('.todo__checkbox');
-      checkboxEls.forEach((checkboxEl) => {
-        if (!checkboxEl.checked) return;
+      const indexes = [...checkboxEls]
+        .filter(({ checked }) => checked)
+        .map(({ dataset }) => parseInt(dataset.index, 10));
 
-        const index = parseInt(checkboxEl.dataset.index, 10);
-        this.delete(index);
-      });
+      this.bulkDelete(indexes);
+      this.sort();
     });
   }
 
@@ -129,12 +130,13 @@ export default class ToDoList {
   delete(idx) {
     const deleteIndex = this.items.findIndex(({ index }) => index === idx);
 
-    if (deleteIndex > -1) {
-      this.items.splice(deleteIndex, 1);
-      this.render();
-      this.initListeners(true);
-      this.store();
-    }
+    if (deleteIndex > -1) this.items.splice(deleteIndex, 1);
+  }
+
+  bulkDelete(indexes) {
+    indexes.forEach((idx) => {
+      this.delete(idx);
+    });
   }
 
   edit(idx, newTodo) {
@@ -162,6 +164,17 @@ export default class ToDoList {
     const items = localStorage.getItem(this.STORE_KEY);
 
     return items ? JSON.parse(items) : [];
+  }
+
+  sort() {
+    this.items = this.items.sort((a, b) => a.index - b.index);
+    this.items.forEach((item, idx) => {
+      item.index = idx + 1;
+    });
+
+    this.render();
+    this.initListeners(true);
+    this.store();
   }
 
   getNewIndex() {
