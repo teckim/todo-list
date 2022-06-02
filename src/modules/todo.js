@@ -1,3 +1,5 @@
+import status from './status.js';
+
 const template = ({ index, description, completed }) => {
   const listItemClasses = [
     'todo__list-item',
@@ -78,7 +80,7 @@ export default class ToDoList {
         const index = parseInt(event.target.dataset.index, 10);
         const { checked } = event.currentTarget;
 
-        this.check(index, checked);
+        status.updateStatus(index, checked, this);
       });
     });
 
@@ -146,14 +148,14 @@ export default class ToDoList {
     this.store();
   }
 
-  check(idx, completed) {
-    const index = this.items.findIndex(({ index }) => index === idx);
+  // check(idx, completed) {
+  //   const index = this.items.findIndex(({ index }) => index === idx);
 
-    this.items[index].completed = completed;
-    this.render();
-    this.initListeners(true);
-    this.store();
-  }
+  //   this.items[index].completed = completed;
+  //   this.render();
+  //   this.initListeners(true);
+  //   this.store();
+  // }
 
   store() {
     const data = JSON.stringify(this.items);
