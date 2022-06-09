@@ -18,4 +18,27 @@ describe('todo list tests:', () => {
     todoList.delete(todoList.items[0].index);
     expect(todoList.items.length).toBe(tdlLength - 1);
   });
+
+  test('edit todo task:', () => {
+    todoList.add('hello');
+
+    const newTask = 'marhaba';
+    const { index } = todoList.items[todoList.items.length - 1];
+
+    todoList.edit(index, newTask);
+
+    const { description } = todoList.items[todoList.items.length - 1];
+    expect(description).toBe(newTask);
+  });
+
+  test('update todo status:', () => {
+    todoList.add('test');
+
+    const { index } = todoList.items[todoList.items.length - 1];
+
+    todoList.updateStatus(index, true);
+
+    const { completed } = todoList.items[todoList.items.length - 1];
+    expect(completed).toBe(true);
+  });
 });
