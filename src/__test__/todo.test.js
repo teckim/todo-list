@@ -20,11 +20,25 @@ describe('todo list tests:', () => {
   });
 
   test('edit todo task:', () => {
-    const newTask = 'hello';
-    todoList.add(newTask);
-    const editedTask = 'marhaba';
-    const editedTaskIndex = todoList.items[todoList.items.length - 1].index;
-    todoList.edit(editedTaskIndex, editedTask);
-    expect(todoList.items[todoList.items.length - 1].description).toBe(editedTask);
+    todoList.add('hello');
+
+    const newTask = 'marhaba';
+    const { index } = todoList.items[todoList.items.length - 1];
+
+    todoList.edit(index, newTask);
+
+    const { description } = todoList.items[todoList.items.length - 1];
+    expect(description).toBe(newTask);
+  });
+
+  test('update todo status:', () => {
+    todoList.add('test');
+
+    const { index } = todoList.items[todoList.items.length - 1];
+
+    todoList.updateStatus(index, true);
+
+    const { completed } = todoList.items[todoList.items.length - 1];
+    expect(completed).toBe(true);
   });
 });
