@@ -72,7 +72,7 @@
   opacity: 0;
   margin-left: auto;
   cursor: move;
-  transition: all ease-in-out .3s .2s;
+  transition: all ease-in-out 0.3s 0.2s;
 }
 
 .todo .todo__label:not(:focus) ~ .todo__drag-btn {
@@ -85,7 +85,7 @@
   opacity: 0;
   margin-left: auto;
   color: #ff7878;
-  transition: all ease-in-out .3s .2s;
+  transition: all ease-in-out 0.3s 0.2s;
 }
 
 .todo .todo__label:focus ~ .todo__remove-btn {
