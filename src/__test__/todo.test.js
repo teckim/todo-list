@@ -18,4 +18,13 @@ describe('todo list tests:', () => {
     todoList.delete(todoList.items[0].index);
     expect(todoList.items.length).toBe(tdlLength - 1);
   });
+
+  test('edit todo task:', () => {
+    const newTask = 'hello';
+    todoList.add(newTask);
+    const editedTask = 'marhaba';
+    const editedTaskIndex = todoList.items[todoList.items.length - 1].index;
+    todoList.edit(editedTaskIndex, editedTask);
+    expect(todoList.items[todoList.items.length - 1].description).toBe(editedTask);
+  });
 });
