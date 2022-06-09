@@ -53,7 +53,7 @@
   transition: background-color ease-in-out 0.3s;
 }
 
-.todo .todo__list-item--focus {
+.todo .todo__list-item:has(.todo__label:focus) {
   background-color: #ffc7c78b;
 }
 
@@ -62,28 +62,35 @@
   margin: 0 12px;
 }
 
-.todo .todo__list-item--completed .todo__label {
+.todo .todo__checkbox:checked ~ .todo__label {
   text-decoration: line-through;
   text-decoration-color: #ff7878;
 }
 
 .todo .todo__drag-btn {
+  visibility: hidden;
+  opacity: 0;
   margin-left: auto;
   cursor: move;
+  transition: all ease-in-out .3s .2s;
 }
 
-.todo .todo__list-item--focus .todo__drag-btn {
-  display: none;
+.todo .todo__label:not(:focus) ~ .todo__drag-btn {
+  visibility: visible;
+  opacity: 1;
 }
 
 .todo .todo__remove-btn {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
   margin-left: auto;
   color: #ff7878;
+  transition: all ease-in-out .3s .2s;
 }
 
-.todo .todo__list-item--focus .todo__remove-btn {
-  display: block;
+.todo .todo__label:focus ~ .todo__remove-btn {
+  visibility: visible;
+  opacity: 1;
 }
 
 .todo .todo__clear-btn {
