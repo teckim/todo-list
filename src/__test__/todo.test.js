@@ -14,8 +14,8 @@ describe('todo list tests:', () => {
 
   test('todo task deleted:', () => {
     todoList.add('hi');
-    let tdlLength = todoList.items.length;
+    const tdlLength = todoList.items.length;
     todoList.delete(todoList.items[0].index);
     expect(todoList.items.length).toBe(tdlLength - 1);
-  })
+  });
 });
